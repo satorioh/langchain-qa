@@ -1,6 +1,6 @@
 import time
 import logging
-from models.chatglm_llm import ChatGLM
+from models import ChatGLM
 
 if __name__ == "__main__":
     llm = ChatGLM()
