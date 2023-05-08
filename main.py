@@ -10,7 +10,8 @@ test_folder = get_abs_path('test')
 if __name__ == "__main__":
     embeddings = CustomEmbeddings().embeddings
     split_docs = CustomTextSplitter(test_folder).get_split_docs()
-    vector_store = VectorStore(embeddings, split_docs).save_local()
+    vector_store = VectorStore(embeddings, split_docs)
+    vector_store.similarity_search("宅基地使用权及房屋所有权转移登记")
     # llm = ChatGLM()
     # while True:
     #     human_input = input("Human: ")

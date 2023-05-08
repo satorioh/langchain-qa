@@ -6,16 +6,16 @@ class VectorStore:
         print("init vector store...")
         self.embeddings = embeddings
         self.split_docs = split_docs
-        self.db = None
+        try:
+            self.db = FAISS.load_local("faiss_index", embeddings)
+        except Exception as err:
+            self.db = FAISS.from_documents(split_docs, embeddings)
+            self.db.save_local("faiss_index")
         print("init vector store finished")
-
-    def save_local(self):
-        print("start save local...")
-        self.db = FAISS.from_documents(self.split_docs, self.embeddings)
-        # self.db.save_local("faiss_index")
 
     def similarity_search(self, query):
         print("start similarity search...")
         result = self.db.similarity_search(query)
         print("similarity search result:")
         print(result)
+        return result
