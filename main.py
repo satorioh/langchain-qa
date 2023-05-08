@@ -14,5 +14,4 @@ if __name__ == "__main__":
         end_time = time.time() * 1000
         used_time = round(end_time - begin_time, 3)
         logging.info(f"chatGLM process time: {used_time}ms")
-
-        print(f"ChatGLM: {response}")
+        logging.info(f"ChatGLM: {response}")
