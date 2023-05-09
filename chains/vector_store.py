@@ -34,5 +34,4 @@ class VectorStore:
         # TODO query need vector
         related_docs = self.get_similarity_docs(query)
         prompt = self.generate_prompt(related_docs, query)
-        print(prompt)
         return prompt

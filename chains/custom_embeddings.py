@@ -11,7 +11,6 @@ class CustomEmbeddings:
         print(f"EMBEDDING_DEVICE:{EMBEDDING_DEVICE}")
 
         absolute_path = get_abs_path(embedding_model_dict[EMBEDDING_MODEL])
-        print("absolute_path", absolute_path)
         # TODO MEAN pooling warning
         self.embeddings = HuggingFaceEmbeddings(model_name=absolute_path,
                                                 model_kwargs={'device': EMBEDDING_DEVICE})

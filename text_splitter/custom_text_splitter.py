@@ -16,6 +16,5 @@ class CustomTextSplitter:
         # 切割加载的 document
         print("start split docs...")
         split_docs = text_splitter.split_documents(self.documents)
-        print(split_docs)
         print("split docs finished")
         return split_docs
