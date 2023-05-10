@@ -10,6 +10,9 @@ def set_store(key, value):
 
 def get_store(key, default=None):
     """
-    获得一个全局变量,不存在则返回默认值
+    获得全局变量,不存在则返回默认值
     """
-    return _global_dict.get(key, default)
+    try:
+        return _global_dict.get(key, default)
+    except:
+        init_store()
