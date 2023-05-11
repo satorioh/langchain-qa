@@ -1,11 +1,7 @@
-from typing import Optional
+from typing import Optional, Dict
 from pydantic import BaseModel
 
 
 class BaseResponse(BaseModel):
-    message: Optional[str]
+    data: Dict
     code: int
-
-
-class AnswerResponse(BaseResponse):
-    answer: str

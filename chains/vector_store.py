@@ -27,7 +27,6 @@ class VectorStore:
         print("start similarity search...")
         result = self.db.similarity_search(query)
         print("similarity search result:")
-        print(result)
         return result
 
     def get_vector_prompt(self, query):
