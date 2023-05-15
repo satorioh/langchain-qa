@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 origins = [
     "http://localhost",
-    "http://localhost:5173",
+    "http://localhost:6006",
 ]
 
 app.add_middleware(
@@ -26,7 +26,7 @@ test_folder = get_abs_path('test')
 index_folder = get_abs_path('faiss_index')
 
 embeddings = CustomEmbeddings().embeddings
-split_docs = CustomTextSplitter(test_folder).get_split_docs()
+split_docs = CustomTextSplitter(source_folder).get_split_docs()
 vector_store = VectorStore(embeddings, split_docs)
 llm = ChatGLM()
 
