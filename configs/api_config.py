@@ -1,2 +1,2 @@
 # 模型服务url
-CHATGLM_API_URL = "http://region-9.seetacloud.com:52745/"
+CHATGLM_API_URL = "http://localhost:5173/#/"
